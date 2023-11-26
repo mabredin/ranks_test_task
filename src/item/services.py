@@ -1,31 +1,23 @@
-from typing import NewType
+from typing import NewType, Protocol
 
 import stripe
+from stripe.api_resources.checkout import Session
 
 from config import settings
-from .models import Item
+
+StripeSessionId = NewType("StripeSessionId", str)
 
 
-StripeSessionId = NewType('StripeSessionId', str)
+class StripeLineItemsConvertable(Protocol):
+    def to_stripe_line_items(self) -> list[Session.CreateParamsLineItem]:
+        ...
 
 
-def create_stripe_session(item: Item) -> StripeSessionId:
+def create_stripe_session(obj: StripeLineItemsConvertable) -> StripeSessionId:
     session = stripe.checkout.Session.create(
-        line_items=[
-            {
-                'price_data': {
-                    'currency': 'rub',
-                    'product_data': {
-                        'name': item.name,
-                        'description': item.description,
-                    },
-                    'unit_amount_decimal': item.price * 100
-                },
-                'quantity': 1,
-            }
-        ],
-        mode='payment',
-        success_url=f'{settings.SOURCE_BASE_URL}/success/',
-        cancel_url=f'{settings.SOURCE_BASE_URL}/cancel/'
+        line_items=obj.to_stripe_line_items(),
+        mode="payment",
+        success_url=f"{settings.SOURCE_BASE_URL}/success/",
+        cancel_url=f"{settings.SOURCE_BASE_URL}/cancel/",
     )
-    return StripeSessionId(session['id'])
+    return StripeSessionId(session["id"])

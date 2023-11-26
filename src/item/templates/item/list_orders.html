@@ -8,10 +8,10 @@
   <body>
     <div class="container-sm" id="items_app">
       <ul>
-        <h3 style="text-align: center">Item list</h3>
+        <h3 style="text-align: center">Order list</h3>
         <ul>
-        {% for item in object_list %}
-            <li><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></li>
+        {% for order in object_list %}
+            <li><a href="{{ order.get_absolute_url }}">{{ order.id }}</a></li>
         {% endfor %}
         </ul>
         <a href="{% url 'main:main' %}" class="btn">Вернуться к списку</a>
