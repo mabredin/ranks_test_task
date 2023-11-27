@@ -21,7 +21,7 @@
         <span class="sr-only"></span>
       </div>
       <div id="item-element">
-        <h1 id='order_id' class="text-center">{{ object.id }}</h1>
+        <h1 id='order_id' class="text-center">Order №{{ object.id }}</h1>
         {% for item in object.items.all %}
             <p id='name'>{{ item.name }}</p>    
             <p id='description'>{{ item.description }}</p>

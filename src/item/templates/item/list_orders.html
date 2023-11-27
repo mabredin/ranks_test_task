@@ -13,8 +13,8 @@
         {% for order in object_list %}
             <li><a href="{{ order.get_absolute_url }}">{{ order.id }}</a></li>
         {% endfor %}
-        </ul>
-        <a href="{% url 'main:main' %}" class="btn">Вернуться к списку</a>
+        </ul><br>
+        <a href="{% url 'main:main' %}" class="btn btn-info">Вернуться к списку</a>
     </ul>
     </div>
   </body>

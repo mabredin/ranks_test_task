@@ -1,9 +1,12 @@
 <html>
   <head>
     <title>Thanks for your order!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Thanks for your order!</h1>
-    <a href="{% url 'main:item_list' %}" class="btn">Вернуться к списку</a>
+    <div class="container-sm" style="text-align: center">
+      <h1>Thanks for your order!</h1><br>
+      <a href="{% url 'main:main' %}" class="btn btn-info">Вернуться к списку</a>
+    </div>
   </body>
 </html>
