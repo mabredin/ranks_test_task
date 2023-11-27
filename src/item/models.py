@@ -76,7 +76,7 @@ class Order(models.Model):
                     "currency": "rub",
                     "product_data": {
                         "name": item["name"],
-                        "description": item["description"],
+                        "description": item["description"] if item["description"] else None,
                     },
                     "unit_amount_decimal": item["price"] * 100,
                 },
