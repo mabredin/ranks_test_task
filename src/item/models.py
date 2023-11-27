@@ -12,7 +12,9 @@ class Item(models.Model):
         verbose_name="Название",
     )
     description = models.TextField(
-        help_text="Введите описание товара", verbose_name="Описание"
+        help_text="Введите описание товара",
+        verbose_name="Описание",
+        blank=True
     )
     price = models.DecimalField(
         max_digits=8,
