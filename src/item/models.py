@@ -33,7 +33,7 @@ class Item(models.Model):
                 "currency": "rub",
                 "product_data": {
                     "name": self.name,
-                    "description": self.description,
+                    "description": self.description if self.description else None,
                 },
                 "unit_amount_decimal": self.price * 100,
             },
