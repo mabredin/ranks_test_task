@@ -93,5 +93,9 @@ sudo docker compose run web python manage.py createsuperuser
 Страница оплаты заказа<br/><br/>
 ![](https://github.com/mabredin/ranks_test_task/assets/62469376/68fa6a06-198f-4d90-a02b-98555a2f7c9d)
 
+Пример работы сервиса на удаленном сервере<br/><br/>
+![](https://github.com/mabredin/ranks_test_task/assets/62469376/2e5b7555-8cfc-44fc-a11f-0849b4a09e61)
+
+
 # Примечание
 _Так как проект представляет собой выполнение тестового задания, в репозитории присутствуют файлы .env, Makefile и requirements_dev.txt_<br/>
