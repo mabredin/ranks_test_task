@@ -80,5 +80,18 @@ sudo docker compose run web python manage.py createsuperuser
 - Снова перейти по адресу _0.0.0.0:8000/_ или _<server_ip>:8000/_
 - Сервис готов.
 
+# Пример работы
+Страница с информацией о товаре<br/><br/>
+![](https://github.com/mabredin/ranks_test_task/assets/62469376/8800056b-9a73-4098-a69a-c8e18a4236eb)
+
+Страница оплаты товара<br/><br/>
+![](https://github.com/mabredin/ranks_test_task/assets/62469376/9700f01f-3abb-480f-974c-6ce3516734ce)
+
+Страница с информацией о заказе<br/><br/>
+![](https://github.com/mabredin/ranks_test_task/assets/62469376/a125a099-f47f-453d-aa0c-29ceb93bf4d4)
+
+Страница оплаты заказа<br/><br/>
+![](https://github.com/mabredin/ranks_test_task/assets/62469376/68fa6a06-198f-4d90-a02b-98555a2f7c9d)
+
 # Примечание
 _Так как проект представляет собой выполнение тестового задания, в репозитории присутствуют файлы .env, Makefile и requirements_dev.txt_<br/>
